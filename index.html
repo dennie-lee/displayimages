@@ -108,17 +108,24 @@
 			background-color: rgba(0, 255, 255, 0.75);
 		}
 
+		.alert_container {
+			display: flex;
+			justify-content: center; /* 水平居中 */
+			align-items: center; /* 垂直居中 */
+			height: 100vh; /* 视窗高度 */
+  		}
+
 		.show_info {
 			position: fixed;
 			background-color: rgba(0, 0, 0, .6);
 			padding: 10px;
 			width: 300px;
 			margin: 0 auto;
-			left: 0;
-			right: 0;
+			/* left: 0; */
+			/* right: 0; */
 			border-radius: 5px;
 			box-shadow: 0 0 10px 0 #fff;
-			top: 20%;
+			/* top: 20%; */
 			z-index: -1;
 		}
 
@@ -252,12 +259,15 @@
 		<button id="grid">格子</button>
 	</div>
 
-	<div class="show_info animated" style="display:none;">
-		<div class="info_my">
-			<img id="alertimg" width=300px src="img/28.JPG" />
+	<div class="alert_container">
+		<div class="show_info animated" style="display:none;">
+			<div class="info_my">
+				<img id="alertimg" width=300px src="img/28.JPG" />
+			</div>
+			<div class="intro">七夕快乐，小宝贝🌹： <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 祝你天天开心无烦恼🌹🌹🌹🌹🌹🌹（来自一个自认为是大叔的祝福</div>
 		</div>
-		<div class="intro">七夕快乐，小宝贝🌹： <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 祝你天天开心无烦恼🌹🌹🌹🌹🌹🌹（来自一个自认为是大叔的祝福</div>
 	</div>
+	
 
 	<script>
 		var personArray = new Array;
@@ -280,7 +290,7 @@
 			$('.show_info').addClass(_in[rand_in]);
 
 			var img = document.getElementById("alertimg")
-			img.setAttribute('src', 'img/'+ CurPersonNum%29 + '.JPG');
+			img.setAttribute('src', 'img/'+ CurPersonNum%26 + '.JPG');
 
 			setTimeout(function () {
 				++CurPersonNum;
@@ -291,7 +301,7 @@
 		// 生成虚拟数据
 		for (var i = 1; i < 200; i++) {
 			personArray.push({
-				image: "img/" + i%29 + ".JPG"
+				image: "img/" + i%26 + ".JPG"
 			});
 		}
 
